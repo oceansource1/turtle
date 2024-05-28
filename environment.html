@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitat Setup - Turtle Care Sharing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Turtle Care Sharing - Habitat Setup</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="basics.html">Turtle Basics</a></li>
+                <li><a href="environment.html">Habitat Setup</a></li>
+                <li><a href="food.html">Feeding</a></li>
+                <li><a href="health.html">Health Care</a></li>
+                <li><a href="species.html">Species</a></li>
+                <li><a href="stories.html">Community Stories</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="carousel">
+            <div class="slides">
+                <div class="slide" id="slide1">
+                    <h2>Water-Based Habitats</h2>
+                    <p>This slide provides information about setting up water-based environments for aquatic turtles.
+                    </p>
+                    <img src="3.jpg" alt="Aquatic Habitat">
+                </div>
+                <div class="slide" id="slide2" style="display: none;">
+                    <h2>Land-Based Habitats</h2>
+                    <p>This slide explains how to create dry and semi-humid environments for terrestrial turtles.</p>
+                    <img src="4.jpg" alt="Land Habitat">
+                </div>
+                
+            </div>
+            <button class="carousel-btn left" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-btn right" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © 2024 Turtle Care Sharing</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

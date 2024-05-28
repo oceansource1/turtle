@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Species - Turtle Care Sharing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Turtle Care Sharing - Turtle Species</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="basics.html">Turtle Basics</a></li>
+                <li><a href="environment.html">Habitat Setup</a></li>
+                <li><a href="food.html">Feeding</a></li>
+                <li><a href="health.html">Health Care</a></li>
+                <li><a href="species.html">Species</a></li>
+                <li><a href="stories.html">Community Stories</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="Search species...">
+            <button onclick="filterSpecies()">Search</button>
+        </div>
+        <div id="speciesGallery"></div>
+    </main>
+    <footer>
+        <p>Copyright © 2024 Turtle Care Sharing</p>
+    </footer>
+    <script>
+        const speciesData = [
+            { name: "Green Sea Turtle", description: "Marine turtle found in tropical and subtropical seas around the world." },
+            { name: "Loggerhead Sea Turtle", description: "The loggerhead is known for its large head and carnivorous habits." },
+            { name: "Leatherback Sea Turtle", description: "The largest of all living turtles and highly migratory." }
+        ];
+
+        function filterSpecies() {
+            const searchText = document.getElementById('searchBox').value.toLowerCase();
+            const filteredData = speciesData.filter(species => species.name.toLowerCase().includes(searchText));
+            displaySpecies(filteredData);
+        }
+
+        function displaySpecies(speciesList) {
+            const gallery = document.getElementById('speciesGallery');
+            gallery.innerHTML = '';
+            speciesList.forEach(species => {
+                const div = document.createElement('div');
+                div.className = 'speciesItem';
+                div.innerHTML = `<h3>${species.name}</h3><p>${species.description}</p>`;
+                gallery.appendChild(div);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            displaySpecies(speciesData);
+        });
+    </script>
+</body>
+
+</html>

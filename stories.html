@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Stories - Turtle Care Sharing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Turtle Care Sharing - Community Stories</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="basics.html">Turtle Basics</a></li>
+                <li><a href="environment.html">Habitat Setup</a></li>
+                <li><a href="food.html">Feeding</a></li>
+                <li><a href="health.html">Health Care</a></li>
+                <li><a href="species.html">Species</a></li>
+                <li><a href="stories.html">Community Stories</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="storySubmission">
+            <h2>Share Your Turtle Story</h2>
+            <form id="storyForm">
+                <input type="text" id="storyTitle" placeholder="Story Title" required>
+                <textarea id="storyContent" placeholder="Write your story..." required></textarea>
+                <div style="text-align: center;">
+                    <button type="submit">Submit Story</button>
+                </div>
+            </form>
+        </section>
+        <section id="stories">
+            <h2>Community Stories</h2>
+            <div id="storyList"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2024 Turtle Care Sharing</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('storyForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const title = document.getElementById('storyTitle').value.trim();
+                const content = document.getElementById('storyContent').value.trim();
+
+                if (title && content) {
+                    const storyList = document.getElementById('storyList');
+                    const newStory = document.createElement('div');
+                    newStory.className = 'story';
+                    newStory.innerHTML = `<h3>${title}</h3><p>${content}</p><div class='comments'><ul></ul><textarea></textarea><button onclick='addComment(this)'>Add Comment</button></div>`;
+                    storyList.prepend(newStory);
+
+                    document.getElementById('storyTitle').value = '';
+                    document.getElementById('storyContent').value = '';
+                } else {
+                    alert('Please fill in all fields.');
+                }
+            });
+
+            window.addComment = function (button) {
+                const textarea = button.previousElementSibling;
+                const comment = textarea.value.trim();
+                if (comment) {
+                    const commentsList = button.parentNode.querySelector('ul');
+                    const newComment = document.createElement('li');
+                    newComment.textContent = comment;
+                    commentsList.appendChild(newComment);
+                    textarea.value = ''; // Clear textarea
+                } else {
+                    alert('Please write a comment.');
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

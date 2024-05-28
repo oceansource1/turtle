@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Disease Identification - Turtle Care Sharing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Turtle Care Sharing - Disease Identification</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="basics.html">Turtle Basics</a></li>å
+                <li><a href="environment.html">Habitat Setup</a></li>
+                <li><a href="food.html">Feeding</a></li>
+                <li><a href="health.html">Health Care</a></li>
+                <li><a href="species.html">Species</a></li>
+                <li><a href="stories.html">Community Stories</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="disease-identifier">
+            <h2>Disease Identification Assistant</h2>
+            <p>Upload a picture of your turtle to help identify potential health issues.</p>
+            <input type="file" id="turtleImage" accept="image/*" style="display: none;"
+                aria-label="Upload a turtle image">
+            <button id="uploadBtn">Choose a file</button>
+            <span id="fileChosen">No file chosen</span>
+            <button onclick="identifyDisease()">Analyze Image</button>
+            <div id="results"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2024 Turtle Care Sharing</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
